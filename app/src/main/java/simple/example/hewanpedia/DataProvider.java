@@ -8,6 +8,7 @@ import java.util.List;
 import simple.example.hewanpedia.model.Anjing;
 import simple.example.hewanpedia.model.Hewan;
 import simple.example.hewanpedia.model.Kucing;
+import simple.example.hewanpedia.model.Ulat;
 
 public class DataProvider {
     private static List<Hewan> hewans = new ArrayList<>();
@@ -45,10 +46,23 @@ public class DataProvider {
                 "Anjing dari daerah Shiba ini gesit dan lincah sehingga awalnya banyak digunakan untuk berburu ", R.drawable.dog_shiba));
         return anjings;
     }
+    private static List<Ulat> initDataUlat(Context ctx) {
+        List<Ulat> ulats = new ArrayList<>();
+        ulats.add(new Ulat("Sutra Raksasa", "Amerika Selatan",
+                "Berasal dari Amerika Selatan , ulat ini adalah bentuk larva ngengat ulat raksasa raksasa, dan dianggap sebagai salah satu ulat paling berbahaya di dunia", R.drawable.ulat_sutra_raksasa));
+        ulats.add(new Ulat("Ulat Puss", "Amerika Selatan",
+                "Ternyata ulat bulu yang terlihat imut ini sangat beracun, sengatnya bisa menyebabkan sakit kepala, bengkak, mual, kulit melepuh bahkan kesulitan bernapas. Yang lebih membuat orang khawatir adalah, ulat berbulu lebat ini tidak berhabitat di hutan, melainkan di perkotaan", R.drawable.ulat_puss));
+        ulats.add(new Ulat("Ulat Bag Shelter", "Australia Barat",
+                "Ulat ini merupakan salah satu ulat yang tubuhnya ditumbuhi rambut, ia adalah salah satu yang berbahaya dan sebaiknya dijauhi ketika jika bertemu. Ulat bag shelter ini aktif di malam hari, dan sangat menyukai pepohonan beefwood (Gravillea striata), tanaman yang berasal dari Australia Barat", R.drawable.ulat_bag_shelter));
+        ulats.add(new Ulat("Ulat Saddleback", "Amerika Selatan",
+                "Ulat ini tergolong unik dengan motif punggungnya yang memang mirip pelana kuda (saddleback). Dibalik kecantikannya, racunnya cukup ganas. Tubuhnya ditumbuhi duri yang tajam dan keras, disitulah saddleback menyimpan racunnya.", R.drawable.ulat_saddleback));
+        return ulats;
+    }
 
     private static void initAllHewans(Context ctx) {
         hewans.addAll(initDataKucing(ctx));
         hewans.addAll(initDataAnjing(ctx));
+        hewans.addAll(initDataUlat(ctx));
     }
 
     public static List<Hewan> getAllHewan(Context ctx) {
